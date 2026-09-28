@@ -18,17 +18,27 @@
   let dialogOpener = null;
   let dialogPreviousHash = '';
   let closingForHistory = false;
-  const descriptions = {
-    films: 'Music, documentary, narrative, and commercial images.',
-    campaigns: 'Creative ideas, made real through collaboration and craft.',
-    projects: 'Software I design and build. Tools for everyday life, film, and new possibilities.'
-  };
   const palette = [ ['#d8dfd3','#304936'], ['#2d3a37','#e6eadf'], ['#e2d6c4','#514539'], ['#ded9e3','#463c52'], ['#d5dce1','#314751'], ['#e6d3c7','#684438'] ];
   function node(tag, className, text) {
     const element = document.createElement(tag);
     if (className) element.className = className;
     if (text !== undefined) element.textContent = text;
     return element;
+  }
+  function svgIcon(name) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', `icon icon-${name}`);
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    svg.setAttribute('viewBox', '0 0 16 16');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    if (name === 'plus') {
+      path.setAttribute('d', 'M8 4v8M4 8h8');
+    } else if (name === 'arrow-up-right') {
+      path.setAttribute('d', 'M4.5 11.5L11.5 4.5M6.5 4.5H11.5V9.5');
+    }
+    svg.appendChild(path);
+    return svg;
   }
   function label(item) {
     return item.client && !item.title.toLowerCase().includes(item.client.toLowerCase()) ? `${item.client}: ${item.title}` : item.title;
@@ -122,7 +132,6 @@
     grid.replaceChildren();
     grid.classList.toggle('is-index', layout === 'index');
     $('#work-count').textContent = `${String(items.length).padStart(2, '0')} ${items.length === 1 ? 'project' : 'projects'}`;
-    $('#discipline-description').textContent = descriptions[discipline];
     items.forEach((item, index) => {
       const article = node('article', 'work-card');
       const button = node('button', 'card-open');
@@ -153,8 +162,9 @@
       } else {
         imageArea.append(node('span', 'card-number', String(index + 1).padStart(2, '0')));
       }
-      const action = node('span', 'card-action', isProject ? '↗' : item.embed ? '↗' : '+');
+      const action = node('span', 'card-action');
       action.setAttribute('aria-hidden', 'true');
+      action.appendChild(svgIcon(isProject || item.embed ? 'arrow-up-right' : 'plus'));
       imageArea.append(action);
       if (item.preview) imageArea.append(node('span', 'motion-indicator', 'Motion preview'));
       const meta = node('div', 'card-meta');
@@ -229,14 +239,18 @@
     links.replaceChildren();
     const itemLinks = item.links?.length ? item.links : item.url ? [{label: item.embed ? 'Watch on original site' : 'Visit project', url: item.url}] : [];
     itemLinks.forEach(link => {
-      const a = node('a', '', `${link.label} ↗`);
+      const a = node('a');
+      a.textContent = link.label + ' ';
+      a.appendChild(svgIcon('arrow-up-right'));
       a.href = link.url;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
       links.append(a);
     });
     if (!itemLinks.length) {
-      const a = node('a', '', 'Ask me about this project ↗');
+      const a = node('a');
+      a.textContent = 'Ask me about this project ';
+      a.appendChild(svgIcon('arrow-up-right'));
       a.href = 'mailto:jmcshanedp@gmail.com?subject=' + encodeURIComponent(item.title);
       links.append(a);
     }
