@@ -3,73 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The personal portfolio of James McShane, cinematographer, director, and developer.">
-  <title>James McShane | Portfolio</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0d1015;
-      color: #f4f1e8;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(176, 108, 88, 0.2), transparent 38rem),
-        #0d1015;
-    }
-
-    main {
-      width: min(44rem, calc(100% - 3rem));
-      padding: 5rem 0;
-    }
-
-    p {
-      margin: 0;
-      color: #b8b6b0;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      line-height: 1.7;
-    }
-
-    .eyebrow {
-      margin-bottom: 1.25rem;
-      color: #d78c73;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 10ch;
-      margin: 0 0 1.5rem;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.4rem, 11vw, 7.6rem);
-      font-weight: 400;
-      line-height: 0.92;
-      letter-spacing: -0.05em;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 2rem;
-      color: #f4f1e8;
-      text-underline-offset: 0.35em;
-    }
-  </style>
+  <meta name="theme-color" content="#f3f1ea">
+  <title>James McShane | Cinematography, Creative Direction & Software</title>
+  <meta name="description" content="Films, ideas, and things that work. Explore James McShane’s work in cinematography, creative direction, and software, including Somnora.">
+  <link rel="canonical" href="https://james-mcshane.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="James McShane | A point of view.">
+  <meta property="og:description" content="Cinematography. Creative direction. Software & ventures. A personal portfolio by James McShane.">
+  <meta property="og:url" content="https://james-mcshane.github.io/">
+  <meta property="og:image" content="https://james-mcshane.github.io/assets/images/showreel.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260928">
+  <script src="data.js?v=20260928" defer></script>
+  <script src="media.js?v=20260928" defer></script>
+  <script src="app.js?v=20260928" defer></script>
 </head>
 <body>
-  <main>
-    <p class="eyebrow">Cinematographer · Director · Developer</p>
-    <h1>James McShane</h1>
-    <p>A new portfolio is taking shape. Film, visual storytelling, and the software I build will live here.</p>
-    <a href="https://github.com/james-mcshane">View GitHub profile</a>
+  <a class="skip-link" href="#work">Skip to work</a>
+  <header class="site-header page-width">
+    <a class="wordmark" href="#top" aria-label="James McShane, home"><span class="monogram" aria-hidden="true">jm<span>•</span></span><span>James McShane</span></a>
+    <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a class="contact-nav" href="mailto:jmcshanedp@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="top">
+    <section class="hero page-width" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="asterisk" aria-hidden="true">✳</span> One curiosity. Many mediums.</p>
+        <h1 id="hero-title">A point<br>of <em>view.</em></h1>
+        <p class="hero-intro">I make films, shape ideas, and build tools.<br>Sometimes all three.</p>
+        <a class="text-link hero-link" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="reel-wrap">
+        <button class="reel media-trigger" type="button" id="reel-button" aria-label="Play James McShane’s cinematography showreel">
+          <img id="reel-poster" src="assets/images/showreel.webp" alt="A frame from James McShane’s cinematography showreel" width="1280" height="960" fetchpriority="high">
+          <span class="reel-top"><span class="eyebrow">Through my lens</span><span class="frame-corners" aria-hidden="true">⌜ ⌝</span></span>
+          <span class="reel-bottom"><span class="play-circle" aria-hidden="true">▶</span><span><strong>Play showreel</strong><small>Cinematography / Selected moments</small></span><span class="reel-arrow" aria-hidden="true">↗</span></span>
+          <span class="preview-hint" id="reel-preview-hint" hidden>Hover for a little motion</span>
+        </button>
+        <div class="reel-caption"><span>A selection of moving images</span><span aria-hidden="true">FIG. 01</span></div>
+      </div>
+    </section>
+
+    <div class="discipline-line page-width" aria-label="Areas of practice"><span>Cinematography</span><span aria-hidden="true">/</span><span>Creative direction</span><span aria-hidden="true">/</span><span>Software & ventures</span><a href="#about" aria-label="More about James"><span aria-hidden="true">↙</span></a></div>
+
+    <section class="work-section page-width" id="work" aria-labelledby="work-heading">
+      <div class="section-heading"><div><p class="eyebrow">A few ways I see the world</p><h2 id="work-heading">Selected <em>work.</em></h2></div><p class="section-note">From a frame to an idea<br>to something you can use.</p></div>
+      <div class="work-navigation">
+        <div class="discipline-tabs" role="tablist" aria-label="Choose a discipline">
+          <button role="tab" id="tab-films" data-discipline="films" aria-controls="work-panel" aria-selected="true"><span>01</span> Cinematography</button>
+          <button role="tab" id="tab-campaigns" data-discipline="campaigns" aria-controls="work-panel" aria-selected="false" tabindex="-1"><span>02</span> Creative direction</button>
+          <button role="tab" id="tab-projects" data-discipline="projects" aria-controls="work-panel" aria-selected="false" tabindex="-1"><span>03</span> Software & ventures</button>
+        </div>
+      </div>
+      <div class="work-toolbar"><div class="filters" id="filters" role="group" aria-label="Filter work"></div><div class="view-switch" role="group" aria-label="Work layout"><button type="button" data-layout="gallery" aria-pressed="true" title="Gallery view"><span aria-hidden="true">▦</span> Gallery</button><button type="button" data-layout="index" aria-pressed="false" title="Index view"><span aria-hidden="true">☷</span> Index</button></div></div>
+      <div class="work-panel" id="work-panel" role="tabpanel" aria-labelledby="tab-films" tabindex="0">
+        <div class="work-intro"><p id="discipline-description">Music, documentary, narrative, and commercial images.</p><span id="work-count" aria-live="polite"></span></div>
+        <div class="work-grid" id="work-grid"></div>
+        <noscript><p>This gallery needs JavaScript. You can <a href="https://vimeo.com/658473014">watch my showreel on Vimeo</a> or <a href="mailto:jmcshanedp@gmail.com">get in touch directly</a>.</p></noscript>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-heading"><div class="about-inner page-width">
+      <div class="about-title"><p class="eyebrow">Behind the work</p><h2 id="about-heading">Different tools.<br>Same <em>curiosity.</em></h2><span class="about-mark" aria-hidden="true">✳</span></div>
+      <div class="about-copy"><p class="about-lead">I’m James. A cinematographer, creative director, and developer who likes figuring things out.</p><p>Sometimes that means finding the right light. Sometimes it means bringing a campaign into focus, or building a piece of software I wish existed.</p><p>I move between film sets, creative production, and the tools I build, including Somnora. The medium changes. My interest in how something looks, feels, and works stays with me.</p><div class="practice-list"><div><span>01</span><p>Images with intention<small>Cinematography & visual storytelling</small></p></div><div><span>02</span><p>Ideas made tangible<small>Creative & technical production</small></p></div><div><span>03</span><p>Tools with a purpose<small>Software development & founding</small></p></div></div></div>
+    </div></section>
+
+    <section class="contact-section page-width" id="contact" aria-labelledby="contact-heading"><div><p class="eyebrow">The next thing starts with a conversation</p><h2 id="contact-heading">Have something<br><em>in mind?</em></h2></div><div class="contact-details"><a class="contact-arrow" href="mailto:jmcshanedp@gmail.com" aria-label="Email James McShane"><span aria-hidden="true">↗</span></a><a class="email-link" href="mailto:jmcshanedp@gmail.com">jmcshanedp@gmail.com</a><p>A film, an idea, a good question.<br>I’d like to hear it.</p></div></section>
   </main>
+  <footer class="site-footer page-width"><a class="wordmark" href="#top"><span class="monogram" aria-hidden="true">jm<span>•</span></span><span>James McShane</span></a><span class="footer-note">Made with a point of view.</span><div><a href="https://github.com/james-mcshane" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="#top">Back to top ↑</a></div></footer>
+
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-shell"><header class="dialog-header"><p class="eyebrow" id="dialog-category"></p><button class="dialog-close" type="button" aria-label="Close project"><span aria-hidden="true">×</span></button></header><div id="dialog-media" class="dialog-media"></div><div class="dialog-body"><p class="eyebrow" id="dialog-client"></p><h2 id="dialog-title"></h2><p class="dialog-role" id="dialog-role"></p><p id="dialog-description"></p><div id="dialog-details"></div><div class="dialog-links" id="dialog-links"></div></div></div></dialog>
 </body>
 </html>
